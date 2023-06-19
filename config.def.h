@@ -67,9 +67,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL};
 static const char *emacscmd[] = {"emacsclient", "-s", "main", "-c", NULL};
 static const char *file_manager_cmd[] = {"nemo", NULL};
-static const char *screenshot_cmd[] = {"scrot", "-fs", "-F", "/home/adham/pics/screenshots/$(date +%Y-%m-%d-%H:%M:%S).png",
-				       "-e", "'xclip", "-selection", "clipboard", "-t", "image/png", "-i", "$f'", NULL};
-
+/* static const char *screenshot_cmd[] = {"scrot", "-fs", "-F", "/home/adham/pics/screenshots/$(date +%Y-%m-%d-%H:%M:%S).png", */
+/*				       "-e", "'xclip", "-selection", "clipboard", "-t", "image/png", "-i", "$f'", NULL}; */
+static const char *screenshot_cmd[] = {"flameshot", "gui", NULL};
 static const char *volume_up_cmd[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%+", NULL};
 static const char *volume_down_cmd[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%-", NULL};
 static const char *volume_mute_cmd[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL};
