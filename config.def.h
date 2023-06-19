@@ -75,16 +75,18 @@ static const char *volume_down_cmd[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_S
 static const char *volume_mute_cmd[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL};
 static const char *volume_mute_mic_cmd[] = {"wpctl", "set-mute", "@DEFAULT_SOURCE@", "toggle", NULL};
 
+/* TODO Add playback controls */
+
 static const Key keys[] = {
   /* modifier                     key        function        argument */
   { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = volume_down_cmd } },
   { 0,                            XF86XK_AudioMute,          spawn, {.v = volume_mute_cmd } },
   { 0,                            XF86XK_AudioMicMute,       spawn, {.v = volume_mute_mic_cmd } },
   { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volume_up_cmd   } },
+  { 0,                            XK_Print,  spawn,          {.v = screenshot_cmd}},
   { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
   { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
   { MODKEY,                       XK_u,      spawn,          {.v = file_manager_cmd}},
-  { MODKEY,                       XK_Print,  spawn,          {.v = screenshot_cmd}},
   { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
   { MODKEY,                       XK_b,      togglebar,      {0} },
   { MODKEY,                       XK_t,      spawn,          {.v = emacscmd}},
