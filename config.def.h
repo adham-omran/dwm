@@ -74,6 +74,8 @@ static const char *volume_up_cmd[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SIN
 static const char *volume_down_cmd[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%-", NULL};
 static const char *volume_mute_cmd[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL};
 static const char *volume_mute_mic_cmd[] = {"wpctl", "set-mute", "@DEFAULT_SOURCE@", "toggle", NULL};
+static const char *brightness_up_cmd[] = {"brightnessctl", "set", "5%-", NULL};
+static const char *brightness_down_cmd[] = {"brightnessctl", "set", "5%-", NULL};
 
 /* TODO Add playback controls */
 
@@ -82,7 +84,9 @@ static const Key keys[] = {
   { 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = volume_down_cmd } },
   { 0,                            XF86XK_AudioMute,          spawn, {.v = volume_mute_cmd } },
   { 0,                            XF86XK_AudioMicMute,       spawn, {.v = volume_mute_mic_cmd } },
-  { 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = volume_up_cmd   } },
+  { 0,                            XF86XK_AudioRaiseVolume,   spawn, {.v = volume_up_cmd   } },
+  { 0,                            XF86XK_MonBrightnessUp,    spawn, {.v = brightness_up_cmd}},
+  { 0,                            XF86XK_MonBrightnessDown,  spawn, {.v = brightness_down_cmd}},
   { 0,                            XK_Print,  spawn,          {.v = screenshot_cmd}},
   { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
   { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
