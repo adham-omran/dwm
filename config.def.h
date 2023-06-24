@@ -74,7 +74,7 @@ static const char *volume_up_cmd[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SIN
 static const char *volume_down_cmd[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%-", NULL};
 static const char *volume_mute_cmd[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL};
 static const char *volume_mute_mic_cmd[] = {"wpctl", "set-mute", "@DEFAULT_SOURCE@", "toggle", NULL};
-static const char *brightness_up_cmd[] = {"brightnessctl", "set", "5%-", NULL};
+static const char *brightness_up_cmd[] = {"brightnessctl", "set", "5%+", NULL};
 static const char *brightness_down_cmd[] = {"brightnessctl", "set", "5%-", NULL};
 
 /* TODO Add playback controls */
